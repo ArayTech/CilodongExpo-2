@@ -1,0 +1,289 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/* 
+body,html{
+	overflow: scroll;
+} */
+/* NAVIGASI */
+
+nav{
+	width:100%;
+	height: auto;
+	padding: 10px 10%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	/* background: #4872A5; */
+	/* background:#109586; */
+	box-shadow: 0 0 5px #333;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+nav .logo img{
+	width: 150px;
+	transition: all 200ms ease;
+}
+nav .logo a:hover img{
+	transform: scale(1.05);
+}
+nav #menu{
+	margin-right: 20%;
+}
+
+nav #menu ul{
+	list-style: none;
+}
+nav #menu ul li{
+	float: left;
+}
+nav #menu ul li a{
+	color: white;
+	padding: 15px 20px;
+	text-decoration: none;
+	font-family: century gothic;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	font-weight: bold;
+	position: relative;
+}
+nav #menu ul li a:before,nav #menu ul li a:after{
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	height: 3px;
+	background: white;
+	content: "";
+	transition: all 120ms ease-in-out;
+}
+nav #menu ul li a:before{
+	left: 50%;
+}
+nav #menu ul li a:after{
+	right: 50%;
+}
+nav #menu ul li a:hover:before,nav #menu ul li a:hover:after{
+	width: 15px;
+}
+
+/* HEADER */
+header{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+header:before,header:after{
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+}
+header:before{
+	background:#4872A5;
+	background-attachment: fixed;
+	width:100%;
+	height: 50%;
+	z-index: -1;
+}
+header:after{
+	background:#8A8BB2;
+	background-attachment: fixed;
+	width:100%;
+	height: 100%;
+	z-index: -2;
+}
+header h1,header p, header a{
+	font-family: century gothic;
+	color: white;
+}
+header h1{
+	font-size: 5.5em;
+	padding: 12px 50px;
+	margin:-70px 0 0px;
+	border: 5px solid white;
+	border-bottom: 5px solid white;
+	text-shadow:  4px 4px #555 ;
+}
+header p{
+	padding: 20px 50px;
+	font-size: 1.5em;
+	background:#4872A5;
+	z-index: 12;
+	transform: translateY(-8px);
+	border-radius: 10px;
+	font-weight:550;
+}
+header a{
+	background: #4872A5;
+	padding: 15px 20px;
+	text-decoration: none;
+	font-weight: bold;
+	position: absolute;
+	bottom: 120px;
+	left: 50%;
+	margin-left: -50px;
+	font-size: 1.2em;
+	-webkit-animation: atasbawah 1s ease-in-out infinite alternate;
+	-o-animation: atasbawah 1s ease-in-out infinite alternate;
+	animation: atasbawah 1s ease-in-out infinite alternate;
+}
+
+@keyframes atasbawah{
+	0%{
+		margin-bottom: 0;
+	}
+	100%{
+		margin-bottom: 20px;
+	}
+}
+
+/* MAIN & SECTION || CONTENT */
+main{
+	padding: 50px;
+	background: #efefef;
+}
+main section{
+	background: white;
+	margin: 0 0 70px;
+	position: relative;
+	text-align: center;
+	padding: 15px;
+	height: auto;
+}
+main section h1{
+	font-family: rockwell;
+	display: inline-block;
+	padding: 50px 50px 30px;
+	margin: 25px 0;
+	font-size: 3.5em;
+	color: #333;
+	position: relative;
+}
+main section h1:before,main section h1:after{
+	position: absolute;
+	bottom: 0;
+	height: 5px;
+	width: 30px;
+	content: "";
+	background: #333;
+}
+main section h1:before{
+	left: 50%;
+}
+main section h1:after{
+	right: 50%;
+}
+main section#activity .activitytxt{
+	padding: 50px 100px;
+	perspective: 700;
+	-webkit-perspective: 1000;
+	display: flex;
+}
+main section#activity .activitytxt .kartu{
+	width: 200px;
+	padding: 150px 40px;
+	background: #109586;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 0 3px #555;
+	color: white;
+	font-family: century gothic;
+	transition: transform 500ms ease;
+	transform-style: preserve-3d;
+	font-size: 1.5em;
+	margin: 0 60px;
+}
+main section#activity .activitytxt .kartu:hover{
+	transform: rotateY(180deg);
+}
+main section#activity .activitytxt .kartu h3{
+	backface-visibility: hidden;
+	position: absolute;
+	left: 50%;
+	margin-left: -55px;
+}
+main section#activity .activitytxt .kartu .belakang{
+	transform: rotateY(180deg);
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+.pushcontainer .kartupush{
+	width: 200px;
+	height: auto;
+	background: #059857;
+	padding: 20px;
+	color: white;
+	font-family: century gothic;
+	transition: all 300ms ease;
+	position: relative;
+	left:100px;
+	overflow: hidden;
+	font-weight: bold;
+}
+.pushcontainer .kartupush:before{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	background: transparent;
+	content: "LIHAT >";
+	transition: all 300ms ease;
+	padding-top: 20px;
+}
+.pushcontainer .kartupush:hover{
+	cursor: pointer;
+}
+.pushcontainer .kartupush:hover:before{
+	left: 0%;
+}
+.pushcontainer .kartupush p{
+	transition: all 300ms ease;
+	position: relative;
+	left: 0;
+}
+.pushcontainer .kartupush:hover p{
+	left: 100%;
+}
+
+/* FOOTER */
+footer{
+	width: 100%;
+	height: auto;
+	padding: 20px;
+	background: rgba(20,120,30,0.8);
+	color: white;
+	font-family: century gothic;
+	text-align: center;
+}
+
+/* SCROLLUP BUTTON */
+
+.scrollup{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background: rgba(20,120,30,0.8);
+	transition: all 300ms ease;
+	border-radius: 10px;
+	padding: 5px 20px;
+	color: white;
+	font-size: 3em;
+	font-weight: bold;
+	text-decoration: none;
+}
+.scrollup:hover{
+	background: rgba(20,120,30,1);
+	cursor: pointer;
+}
